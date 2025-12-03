@@ -1,3 +1,4 @@
+-- created based on https://medium.com/@nikmas_dev/vscode-neovim-setup-keyboard-centric-powerful-reliable-clean-and-aesthetic-development-582d34297985
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
