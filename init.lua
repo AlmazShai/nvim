@@ -37,6 +37,16 @@ require('packer').startup(function(use)
 end
 )
 
+-- set clipboard to global clipboard
+vim.opt.clipboard:append("unnamedplus")
+
+-- keybindings
+
+-- map jk to escape
+-- inoremap('jk', '<ESC>')
+-- inoremap('JK', '<ESC>')
+-- inoremap('jK', '<ESC>')
+
 if vim.g.vscode then
    require "user.vscode_keymaps"
 else
