@@ -17,6 +17,10 @@ keymap({"n", "v"}, "<leader>pr", "<cmd>lua require('vscode').action('code-runner
 keymap({"n", "v"}, "<leader>fd", "<cmd>lua require('vscode').action('editor.action.formatDocument')<CR>")
 keymap({"n", "v"}, "<leader>w", "<cmd>lua require('vscode').action('workbench.action.files.save')<CR>")
 keymap({"n", "v"}, "<leader>q", "<cmd>lua require('vscode').action('workbench.action.closeActiveEditor')<CR>")
+keymap({"n", "v"}, "<leader>o", "<cmd>lua require('vscode').action('clangd.switchheadersource')<CR>")
+
+-- search and replace
+keymap({"n", "v"}, "<leader>fg", "<cmd>lua require('vscode').action('workbench.action.findInFiles')<CR>", opts) -- find in files
 
 -- harpoon keymaps
 keymap({"n", "v"}, "<leader>ha", "<cmd>lua require('vscode').action('vscode-harpoon.addEditor')<CR>")
@@ -35,4 +39,5 @@ keymap({"n", "v"}, "<leader>h9", "<cmd>lua require('vscode').action('vscode-harp
 -- project manager keymaps
 keymap({"n", "v"}, "<leader>pa", "<cmd>lua require('vscode').action('projectManager.saveProject')<CR>")
 keymap({"n", "v"}, "<leader>po", "<cmd>lua require('vscode').action('projectManager.listProjects')<CR>")
+keymap({"n", "v"}, "<leader>pO", "<cmd>lua require('vscode').action('projectManager.listProjectsNewWindow')<CR>")
 keymap({"n", "v"}, "<leader>pe", "<cmd>lua require('vscode').action('projectManager.editProjects')<CR>")

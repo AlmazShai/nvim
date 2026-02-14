@@ -1,41 +1,43 @@
--- packer.nvim config
+-- lazy.nvim config
 
--- ensure that packer is installed
-local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-    packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable",
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
--- configure plugins
-require('packer').startup(function(use)
-    use 'wbthomason/packer.nvim'
-    
-    -- comment/uncomment
-    use {
-        'numToStr/Comment.nvim',
-        config = function()
-            require'Comment'.setup()
-        end
-    }
+-- Configure plugins
+require("lazy").setup({
+  -- comment/uncomment
+  {
+    "numToStr/Comment.nvim",
+    config = function()
+      require("Comment").setup()
+    end,
+  },
 
-    -- surround package
-    use({
-       "kylechui/nvim-surround",
-          -- tag = "fcfa7e02323d57bfacc3a141f8a74498e1522064", -- Use for stability; omit to use `main` branch for the latest features
-          config = function()
-              require("nvim-surround").setup({
-                  -- Configuration here, or leave empty to use defaults
-              })
-        end
-    })
-    -- Automatically set up your configuration after cloning packer.nvim
-    -- Put this at the end after all plugins
-    if packer_bootstrap then
-        require('packer').sync()
-    end
-end
-)
+  -- surround package
+  {
+    "kylechui/nvim-surround",
+    -- tag = "fcfa7e02323d57bfacc3a141f8a74498e1522064", -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
+    end,
+  },
+
+  -- treesitter
+  require("user.plugins.treesitter"),
+})
 
 -- set clipboard to global clipboard
 -- vim.opt.clipboard:append("unnamedplus")
