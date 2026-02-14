@@ -21,5 +21,5 @@ keymap({"n", "v"}, "<leader>o", "<cmd>lua require('vscode').action('clangd.switc
 keymap({"n", "v"}, "<leader>fg", "<cmd>lua require('vscode').action('workbench.action.findInFiles')<CR>", opts) -- find in files
 
 -- Load extension-specific keymaps
-require("vscode.extensions.harpoon")
-require("vscode.extensions.project-manager")
+require("editor.extensions.harpoon")
+require("editor.extensions.project-manager")

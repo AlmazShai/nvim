@@ -15,14 +15,18 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Configure plugins
-require("lazy").setup("plugins")
+require("lazy").setup("plugins", {
+  rocks = {
+    enabled = false,  -- Disable luarocks (not needed for current plugins)
+  },
+})
 
 -- set clipboard to global clipboard
 -- vim.opt.clipboard:append("unnamedplus")
 
 require "user.generic_keymaps"
 if vim.g.vscode then
-  require "vscode.keymaps"
+  require "editor.keymaps"
 else
   require "user.terminal_keymaps"
 end
