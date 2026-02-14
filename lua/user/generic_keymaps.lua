@@ -9,9 +9,11 @@ vim.g.maplocalleader = " "
 
 -- yank to system clipboard
 keymap({"n", "v"}, "<leader>y", '"+y', opts)
+keymap({"n", "v" }, "<leader>Y", '"+Y')
 
 -- paste from system clipboard
 keymap({"n", "v"}, "<leader>p", '"+p', opts)
+keymap({"n", "v"}, "<leader>P", '"+P', opts)
 
 -- better indent handling
 keymap("v", "<", "<gv", opts) 
