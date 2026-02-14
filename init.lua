@@ -1,5 +1,5 @@
+require "user.generic_keymaps" 
 -- lazy.nvim config
-
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -23,8 +23,6 @@ require("lazy").setup("plugins", {
 
 -- set clipboard to global clipboard
 -- vim.opt.clipboard:append("unnamedplus")
-
-require "user.generic_keymaps"
 if vim.g.vscode then
   require "editor.keymaps"
 else
