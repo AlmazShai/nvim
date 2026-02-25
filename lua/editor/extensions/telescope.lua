@@ -10,7 +10,7 @@ keymap("n", "<leader>fs", "<cmd>lua require('vscode').action('code-telescope.fuz
 keymap("n", "<leader>fo", "<cmd>lua require('vscode').action('code-telescope.fuzzy.recentFiles')<CR>", opts) -- recent files
 keymap("n", "<leader>fd", "<cmd>lua require('vscode').action('code-telescope.fuzzy.diagnostics')<CR>", opts) -- diagnostics
 keymap("n", "<leader>ft", "<cmd>lua require('vscode').action('code-telescope.fuzzy.tasks')<CR>", opts) -- tasks
-keymap("n", "<leader>gb", "<cmd>lua require('vscode').action('code-telescope.fuzzy.branch')<CR>", opts) -- git branches
+keymap("n", "<leader>gB", "<cmd>lua require('vscode').action('code-telescope.fuzzy.branch')<CR>", opts) -- git branches
 keymap("n", "<leader>fc", "<cmd>lua require('vscode').action('code-telescope.fuzzy.callHierarchy')<CR>", opts) -- call hierarchy
 keymap("n", "<leader>fb", "<cmd>lua require('vscode').action('code-telescope.fuzzy.breakpoints')<CR>", opts) -- breakpoints
 keymap("n", "<leader>ls", "<cmd>lua require('vscode').action('code-telescope.fuzzy.documentSymbols')<CR>", opts) -- document symbols
